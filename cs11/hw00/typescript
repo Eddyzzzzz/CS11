@@ -1,0 +1,34 @@
+Script started on Thu 20 Jan 2022 03:06:12 PM EST
+vm-hw01{yzhang69}1: host na[K[Kname
+vm-hw01
+vm-hw01{yzhang69}2: who
+ageorg05 pts/0        2022-01-20 10:13 (ppp-2-86-159-119.home.otenet.gr)
+whsiao01 pts/1        2022-01-20 14:06 (pool-96-240-17-128.nwrknj.fios.verizon.net)
+dcolak01 pts/2        2022-01-20 14:53 (213.74.86.24)
+wseree01 pts/3        2022-01-20 14:31 (ppp-58-8-6-141.revip2.asianet.co.th)
+sliu14   pts/4        2022-01-20 12:24 (10.245.82.81)
+yzhang69 pts/5        2022-01-20 14:33 (10.245.40.140)
+yzhang69 pts/6        2022-01-20 15:06
+ndavis07 pts/9        2022-01-20 14:44 (142-79-196-23.starry-inc.net)
+vm-hw01{yzhang69}3: w
+ 15:06:31 up 13 days,  4:30,  8 users,  load average: 0.00, 0.02, 0.05
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+ageorg05 pts/0    ppp-2-86-159-119 10:13    4:45m  0.11s  0.00s impcore
+whsiao01 pts/1    pool-96-240-17-1 14:06   39.00s  0.12s  0.12s -tcsh
+dcolak01 pts/2    213.74.86.24     14:53   13:03   0.09s  0.09s -tcsh
+wseree01 pts/3    ppp-58-8-6-141.r 14:31   31:19   0.10s  0.10s -tcsh
+sliu14   pts/4    10.245.82.81     12:24   51:51   0.15s  0.15s -tcsh
+yzhang69 pts/5    10.245.40.140    14:33    7.00s  0.12s  0.00s script
+yzhang69 pts/6                     15:06    7.00s  0.07s  0.02s w
+ndavis07 pts/9    142-79-196-23.st 14:44   22:07   0.10s  0.10s -tcsh
+vm-hw01{yzhang69}4: pwd
+/h/yzhang69/cs11/hw00
+typescript
+vm-hw01{yzhang69}5: ls -l
+total 4
+-rw-------. 1 yzhang69 games 381 Jan 20 14:37 hello.cpp
+-rw-------. 1 yzhang69 games   0 Jan 20 15:06 typescript
+vm-hw01{yzhang69}6: exiyt[K[Kt
+exit
+
+Script done on Thu 20 Jan 2022 03:06:59 PM EST
