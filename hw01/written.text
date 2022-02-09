@@ -1,0 +1,26 @@
+Name: Eddy Zhang
+Date: Fri Jan 28 2022
+Homework 1
+
+Written #1 
+Talk Like Yoda
+
+• variables:
+    •input1 : The first word that user types in.
+    •input2 : The second word that user types in.
+    •input3 : The third word that user types in.
+    •input4 : The fourth word that user types in.
+    
+• First the program asks the user to type in words,
+• and then each word typed in will be assign to a 
+• unique string variable, which I have already listed
+• above. After 4 words have been typed, the program 
+• will print out each variable one by one with a 
+• reverse order.
+
+Written #2
+An error is that I forgot the semicolon after "endl"
+in the digits.cpp file. I added it on.
+
+Written #3
+3 hours.
