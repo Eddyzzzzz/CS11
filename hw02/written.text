@@ -1,0 +1,60 @@
+Name: Eddy Zhang
+Date: Fri Feb 4 2022
+Homework 2
+
+Written #1 
+Shark Meldon's Bike Shack
+
+• variables:
+    •numWheel : The number of wheels that the user enter.
+    •numFrame : The number of frames that the user enter.
+    •numLink  : The number of links that the user enter.
+    •numBike  : The number of bikes that the user can make.
+    
+• First the program asks the user to type in the number of each materials they 
+• have, and while they are not entering a non-negative integer the program will
+• warn that and let the user enter again.
+• Then the program will solve how many bikes can be made by the relatively
+• least material. 
+• Finally the program will print how many bikes can be made and then print 
+• how many does each material left.
+
+Written #2
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int age = 100;
+    string name = "Sally";
+    string job = "Super Star";
+    
+    if (name == "Sally" && job == "Super Star")
+    {
+        cout << "Hi Sally" << endl;
+        cout << "You are a super star!!" << endl;
+        
+        if (age == 100 || (age != 42 && name != job) )
+        {
+            cout << "Have a nice day!" << endl;
+        }
+    }
+    else
+    {
+        cout << "This isn't Sally...Goodbye!!" << endl;
+    }
+    
+    return 0;
+}
+
+Written #3
+I make the program to print the random number so that I can check if the output
+really satisfies the rule.
+I tested on five different inputs including r, p, s, 5, and g, where r, p, s 
+are ideal inputs, 5 is an integer, and g is a string other than r, p, s. The 
+program worked as intended when I entered r, p, s. But when I enter anything 
+else, it warned me and tell me to re-enter a valid input.
+
+Written #4
+5 hours.
