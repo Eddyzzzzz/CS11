@@ -1,0 +1,123 @@
+HW 6
+written.text
+
+Name: Eddy Zhang
+Login ID: 1374331
+
+
+Written #1:  How I tested my code
+---------------------------------
+Testing Animal.cpp
+in main function:
+        Animal a1(file);
+        a1.print();
+in terminal:       
+        % sh compile           
+        % ./animaldb animals.db
+        name=elephant origin=africa diet=herbivore ear_size=large 
+        classification=mammal
+conclusion:
+        Animal.cpp works as expected.
+
+Testing Animal_Array_List.cpp
+in main function:
+        Animal_Array_List al;
+        for (int i = 0; i < 5; i++){
+                Animal a(file);
+                al.add(a);
+        }
+        al.print();
+        cout << sizeof(al.animals) << endl;
+in terminal:
+        % sh compile
+        % ./animaldb animals.db
+        name=elephant origin=africa diet=herbivore ear_size=large 
+        classification=mammal
+        name=bobcat origin=north_america diet=carnivore ear_size=small 
+        classification=mammal
+        name=hercules_beetle origin=south_america diet=herbivore ear_size=none 
+        classification=insect
+        name=moray_eel origin=asia diet=carnivore ear_size=none 
+        classification=fish
+        name=lion origin=africa diet=carnivore ear_size=small 
+        classification=mammal
+        8
+conclusion: 
+        Animal_Array_List.cpp works as expected and the size of the animals
+        array is correctly expanded.
+
+Testing animaldb.cpp
+in main function:
+        Animal_Array_List all_animals;
+        initialize_DB(file, &all_animals);
+
+        if (argc == 2){
+                all_animals.print();
+        } else if (argc == 4) {
+                do_classification_report(classification, &all_animals);
+        }
+in terminal:
+when argc == 2:
+        ./animaldb animals.db
+        name=elephant origin=africa diet=herbivore ear_size=large 
+        classification=mammal
+        name=bobcat origin=north_america diet=carnivore ear_size=small 
+        classification=mammal
+        name=hercules_beetle origin=south_america diet=herbivore ear_size=none 
+        classification=insect
+        name=moray_eel origin=asia diet=carnivore ear_size=none 
+        classification=fish
+        name=lion origin=africa diet=carnivore ear_size=small 
+        classification=mammal
+        name=bald_eagle origin=north_america diet=carnivore ear_size=small 
+        classification=bird
+        name=orangutan origin=asia diet=omnivore ear_size=small 
+        classification=mammal
+        name=bottlenose_dolphin origin=asia diet=carnivore ear_size=none 
+        classification=mammal
+        name=giraffe origin=africa diet=herbivore ear_size=medium 
+        classification=mammal
+        name=rhinoceros origin=africa diet=herbivore ear_size=medium 
+        classification=mammal
+        ...
+when argc == 3:
+        ./animaldb animals.db classification     
+        Usage: animaldb <animal_db_filename>
+                    -- or --
+        Usage: animaldb <animal_db_filename> classification <animal-class>
+
+        Typical classifications: amphibian, bird, crustacean, fish, insect, 
+        mammal, reptile
+when argc == 4 with valid classification:
+        ./animaldb animals.db classification bird
+        name=bald_eagle origin=north_america diet=carnivore ear_size=small 
+        classification=bird
+        name=chicken origin=north_america diet=omnivore ear_size=none 
+        classification=bird
+        name=crow origin=north_america diet=omnivore ear_size=none 
+        classification=bird
+        name=dove origin=north_america diet=herbivore ear_size=none 
+        classification=bird
+        name=duck origin=north_america diet=herbivore ear_size=none 
+        classification=bird
+        name=colin origin=north_america diet=carnivore ear_size=medium 
+        classification=bird
+        name=flamingo origin=africa diet=herbivore ear_size=none 
+        classification=bird
+        name=gull origin=north_america diet=herbivore ear_size=none 
+        classification=bird
+        name=hawk origin=north_america diet=herbivore ear_size=none 
+        classification=bird
+        ...
+when argc == 4 without valid classification:
+        ./animaldb animals.db classification 123   
+        No animals with classification: 123
+conclusion: 
+        animaldb.cpp works as expected. It can handle different situations.
+
+Written #2:  How much time I spent on this assignment
+-----------------------------------------------------
+6 hours.
+
+
+
