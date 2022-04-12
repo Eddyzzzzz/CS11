@@ -1,0 +1,184 @@
+Project 2
+written.text
+
+Name: Eddy Zhang
+Login ID: 1374331
+
+
+Written #1:  How much time I spent on this assignment
+-----------------------------------------------------
+
+Please estimate of the amount of time you spent on this assignment
+(each week) in hours, e. g., 6.5 hours.  Be as accurate as you can,
+but we know you are not keeping a timer going: just give your best
+estimate.
+
+Week 1 time:
+Week 2 time:
+
+
+Written #2:  How I tested my code
+---------------------------------
+
+Week 1 testing:
+
+For Card class:
+*******************************************************************************
+*******************************************************************************
+In main function:
+    cout << "Making card: value 33" << endl;
+    Card c33(33); 
+    c33.debug_print();
+    cout << endl;
+
+    cout << "Making card: no value" << endl;
+    Card c; 
+    c.debug_print();
+    cout << endl;
+
+In terminal: 
+g++ -o test_linked_list -g -Wall -Werror -Wextra Card.cpp test_linked_list.cpp
+./test_linked_list 
+
+Output:
+Making card: value 33
+ 33 
+Making card: no value
+ NC 
+
+Conclusion:
+The constructor with/without value and 'value' function worked as expected.
+*******************************************************************************
+*******************************************************************************
+
+For CardLinkedList class:
+*******************************************************************************
+*******************************************************************************
+In main function:
+    cout << "Making linked list" << endl;
+    CardLinkedList ll;
+    ll.debug_print();
+
+In terminal: 
+g++ -o test_linked_list Card.cpp test_linked_list.cpp CardLinkedList.cpp
+./test_linked_list
+
+Output:
+Making linked list
+DEBUG: CardLinked List (num_cards = 0) [
+  Index_num   Node Address  Face Value
+]
+
+Conclusion:
+The constructor for a CardLinkedList worked as expected.
+-------------------------------------------------------------------------------
+In main function:
+    cout << "Adding card 33, 34, and 35 to list" << endl;
+    Card c34(34);
+    Card c35(35);
+    ll.add_card_at(0, c33); 
+    ll.add_card_at(1, c35);
+    ll.add_card_at(1, c34);
+    ll.debug_print();
+    cout << "Get the card at index 2" << endl;
+    cout << ll.get_card_at(2).value() << endl;
+
+In terminal: 
+g++ -o test_linked_list Card.cpp test_linked_list.cpp CardLinkedList.cpp
+./test_linked_list
+
+Output:
+Adding card 33, 34, and 35 to list
+DEBUG: CardLinked List (num_cards = 3) [
+  Index_num   Node Address  Face Value
+        0        0x657c20        33 
+        1        0x657c60        34 
+        2        0x657c40        35 
+]
+Get the card at index 2
+35
+
+Conclusion:
+The add/get function for a CardLinkedList worked as expected.
+-------------------------------------------------------------------------------
+In main function:
+    cout << "remove the second card" << endl;
+    ll.remove_card_at(1);
+    cout << "number of cards: " << ll.num_cards() << endl;
+    ll.debug_print();
+    cout << "remove the first card" << endl;
+    ll.remove_card_at(0);
+    cout << "number of cards: " << ll.num_cards() << endl;
+    ll.debug_print();
+
+In terminal: 
+g++ -o test_linked_list Card.cpp test_linked_list.cpp CardLinkedList.cpp
+./test_linked_list
+
+Output:
+Adding card 33, 34, and 35 to list
+remove the second card
+number of cards: 2
+DEBUG: CardLinked List (num_cards = 2) [
+  Index_num   Node Address  Face Value
+        0       0x12e3c20        33 
+        1       0x12e3c40        35 
+]
+remove the first card
+number of cards: 1
+DEBUG: CardLinked List (num_cards = 1) [
+  Index_num   Node Address  Face Value
+        0       0x12e3c40        35 
+]
+
+Conclusion:
+The remove/num function for a CardLinkedList worked as expected.
+-------------------------------------------------------------------------------
+All the functions work!
+*******************************************************************************
+*******************************************************************************
+
+For Deck class:
+*******************************************************************************
+*******************************************************************************
+In main function:
+    cout << "Making a deck with card 33" << endl;
+    Card c33(33); 
+    Deck deck(c33);
+    deck.debug_print();
+
+In terminal: 
+g++ -o test_deck Card.cpp CardLinkedList.cpp Deck.cpp test_deck.cpp
+./test_deck 
+
+Output:
+Making a deck with card 33
+DEBUG: CardLinked List (num_cards = 1) [
+  Index_num   Node Address  Face Value
+        0       0x1f84c20        33 
+]
+
+Conclusion:
+The default constructor for Deck class worked as expected.
+*******************************************************************************
+*******************************************************************************
+
+
+
+Week 2 testing:
+
+
+Written #3: Your comments on the project
+----------------------------------------
+
+Tell us what you learned from this project.  What did you like about
+it? Do you have any suggestions for improving it? Did you enjoy it?
+Fill in the first section after week 1, and then at the end of week
+2 tell us how things looked then. Don't edit your week 1 comments
+for week 2, but you are welcome to tell us in the second section
+that you've changed your opinion!
+
+Week 1 (tell us your thoughts after week 1):
+
+
+Week 2 (add additional comments after week 2):
