@@ -13,7 +13,7 @@ Please estimate of the amount of time you spent on this assignment
 but we know you are not keeping a timer going: just give your best
 estimate.
 
-Week 1 time:
+Week 1 time: 5 hours
 Week 2 time:
 
 
@@ -37,7 +37,7 @@ In main function:
     cout << endl;
 
 In terminal: 
-g++ -o test_linked_list -g -Wall -Werror -Wextra Card.cpp test_linked_list.cpp
+sh compile_test_linked_list 
 ./test_linked_list 
 
 Output:
@@ -60,7 +60,7 @@ In main function:
     ll.debug_print();
 
 In terminal: 
-g++ -o test_linked_list Card.cpp test_linked_list.cpp CardLinkedList.cpp
+sh compile_test_linked_list 
 ./test_linked_list
 
 Output:
@@ -84,7 +84,7 @@ In main function:
     cout << ll.get_card_at(2).value() << endl;
 
 In terminal: 
-g++ -o test_linked_list Card.cpp test_linked_list.cpp CardLinkedList.cpp
+sh compile_test_linked_list 
 ./test_linked_list
 
 Output:
@@ -112,7 +112,7 @@ In main function:
     ll.debug_print();
 
 In terminal: 
-g++ -o test_linked_list Card.cpp test_linked_list.cpp CardLinkedList.cpp
+sh compile_test_linked_list 
 ./test_linked_list
 
 Output:
@@ -148,7 +148,7 @@ In main function:
     deck.debug_print();
 
 In terminal: 
-g++ -o test_deck Card.cpp CardLinkedList.cpp Deck.cpp test_deck.cpp
+sh compile_test_deck 
 ./test_deck 
 
 Output:
@@ -160,6 +160,108 @@ DEBUG: CardLinked List (num_cards = 1) [
 
 Conclusion:
 The default constructor for Deck class worked as expected.
+-------------------------------------------------------------------------------
+In main function:
+    int main(int argc, char *argv[])
+{
+    if (argc != 2){
+        cerr << "ERROR: You must provide the name of the file." << endl;
+        return 1;}
+    string filename = argv[1];
+    Deck deck(filename);
+    deck.debug_print();
+    return 0;
+}
+
+In terminal: 
+sh compile_test_deck 
+./test_deck shuffled_deck1.txt 
+
+Output:
+DEBUG: CardLinked List (num_cards = 20) [
+  Index_num   Node Address  Face Value
+        0        0x75deb0         1 
+        1        0x75ded0         2 
+        2        0x75def0        11 
+        3        0x75df10        13 
+        4        0x75df30         3 
+        5        0x75df50         4 
+        6        0x75df70        18 
+        7        0x75df90         5 
+        8        0x75dfb0        19 
+        9        0x75dfd0        20 
+       10        0x75dff0         6 
+       11        0x75e010         8 
+       12        0x75e030         9 
+       13        0x75e050        10 
+       14        0x75e070        12 
+       15        0x75e090        14 
+       16        0x75e0b0         7 
+       17        0x75e0d0        15 
+       18        0x75e0f0        16 
+       19        0x75e110        17 
+]
+
+Conclusion:
+The constructor that reads a file for Deck class worked as expected and the 
+first card is on the top.
+-------------------------------------------------------------------------------
+In main function:
+    int main(int argc, char *argv[])
+{
+    if (argc != 2){
+        cerr << "ERROR: You must provide the name of the file." << endl;
+        return 1;}
+    string filename = argv[1];
+    Deck deck(filename);
+    cout << deck.number_of_cards() << endl;
+
+    deck.inspect_top_card().debug_print();
+    deck.debug_print();
+    
+    deck.draw_top_card().debug_print();
+    deck.debug_print();
+
+    Card c33(33);
+    deck.put_card_on_top(c33);
+    deck.debug_print();
+
+    return 0;
+}
+
+In terminal: 
+sh compile_test_deck 
+./test_deck shuffled_deck_small.txt 
+
+Output:
+5
+  2 DEBUG: CardLinked List (num_cards = 5) [
+  Index_num   Node Address  Face Value
+        0       0x1091eb0         2 
+        1       0x1091ed0         4 
+        2       0x1091ef0         3 
+        3       0x1091f10         5 
+        4       0x1091f30         1 
+]
+  2 DEBUG: CardLinked List (num_cards = 4) [
+  Index_num   Node Address  Face Value
+        0       0x1091ed0         4 
+        1       0x1091ef0         3 
+        2       0x1091f10         5 
+        3       0x1091f30         1 
+]
+DEBUG: CardLinked List (num_cards = 5) [
+  Index_num   Node Address  Face Value
+        0       0x1091eb0        33 
+        1       0x1091ed0         4 
+        2       0x1091ef0         3 
+        3       0x1091f10         5 
+        4       0x1091f30         1 
+]
+
+Conclusion:
+The number_of_cards, inspect_top_card, draw_top_card, and put_card_on_top for 
+Deck class worked as expected.
 *******************************************************************************
 *******************************************************************************
 
@@ -179,6 +281,7 @@ for week 2, but you are welcome to tell us in the second section
 that you've changed your opinion!
 
 Week 1 (tell us your thoughts after week 1):
+It's good to learn how classes interact!
 
 
 Week 2 (add additional comments after week 2):

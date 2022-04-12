@@ -22,13 +22,14 @@
 using namespace std;
 
 //
-// Constructors
+// Default Constructors
 //
 Card::Card()
 {
     m_value = NO_CARD_HERE;
 }
 
+// Constructor with value
 Card::Card(int new_value)
 {
     m_value = new_value;
@@ -44,6 +45,8 @@ Card::~Card()
 
 //
 // Value
+// Input: None
+// Return: the value of the card in int
 //
 int Card::value()
 {

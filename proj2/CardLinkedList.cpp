@@ -16,8 +16,8 @@
 //  Modified by: Eddy Zhang
 //  Date: Apr 12 2022
 //
-//  Anything else you would like to include:
-//
+//  Anything else you would like to include: N/A
+//  
 
 /**********************************************************/
 /***      Students: Fill in the TODO items below        ***/
@@ -52,9 +52,7 @@ CardLinkedList::CardLinkedList()
 CardLinkedList::~CardLinkedList()
 {
     while (m_front != nullptr) {
-                Node *toDelete = m_front;
-                m_front = m_front -> next;
-                delete toDelete;
+            remove_card_at(0);
         }
 }
 
@@ -80,10 +78,10 @@ unsigned int CardLinkedList::num_cards()
 void CardLinkedList::add_card_at(unsigned int index, Card c)
 {
     // if out of range just return without any operation
-    if (index < 0 or index > num_cards()) {
+    if (index > num_cards()) {
         return;
     } else {
-        Node* toadd = new Node();
+        Node* toadd = new Node(); // a temporary node
         toadd->card = c;
         Node* tem = m_front;
     // add to the front, especially useful with empty List
@@ -92,8 +90,8 @@ void CardLinkedList::add_card_at(unsigned int index, Card c)
             m_front = toadd;
         } else {
     // add to any else positions, including the back
-            for (int i = 0; i < index - 1; i++) {
-                tem = tem->next; 
+            for (int i = 0; i < (int)index - 1; i++) {
+                tem = tem->next; // find the node before the index
             }
             toadd->next = tem->next;
             tem->next = toadd;
@@ -110,24 +108,27 @@ void CardLinkedList::add_card_at(unsigned int index, Card c)
 //
 void CardLinkedList::remove_card_at(unsigned int index)
 {
-    if (index < 0 or index > num_cards() or num_cards() == 0) {
+    //check if the index is out of range
+    if (index > num_cards() or num_cards() == 0) {
         return;
     } else {
-        Node* tem = m_front;
+        Node* tem = m_front; // a temporary node
+    // remove the first node
         if (index == 0) {
             m_front = m_front->next;
             delete tem;
             tem = nullptr;
         } else {
-            for (int i = 0; i < index - 1; i++) {
-                tem = tem->next;
+    // remove any other nodes
+            for (int i = 0; i < (int)index - 1; i++) {
+                tem = tem->next; // find the node to remove
             }
             Node* newtem = tem->next;
             tem->next = newtem->next;
             delete newtem;
             newtem = nullptr;
         }
-        m_list_length --;     
+        m_list_length --; // update m_list_length
     }
 }
 
@@ -140,13 +141,15 @@ void CardLinkedList::remove_card_at(unsigned int index)
 //           NO_CARD_HERE
 Card CardLinkedList::get_card_at(unsigned int index)
 {
-    if (index < 0 or index > num_cards()) {
+    // check if the index is out of range
+    if (index > num_cards()) {
         cerr << "The index is out of range!" << endl;
         Card c;
         return c;
     } else {
+    // make a new node that copys the node on the index
         Node* tem = m_front;
-        for (int i = 0; i < index; i++) {
+        for (int i = 0; i < (int)index; i++) {
             tem = tem->next; 
         }
         return tem->card;

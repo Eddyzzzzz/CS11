@@ -15,7 +15,7 @@
 //  Modified by: Eddy Zhang
 //  Date: Apr 12 2022
 // 
-//  Anything else you would like to include:
+//  Anything else you would like to include: N/A
 //
 
 /**********************************************************/
@@ -54,11 +54,11 @@ Deck::Deck(string filename)
         exit(1);           // exit from program with error return
     }
 
-    f >> card_count;
-
+    f >> card_count; // read the number of the card
     int count = 0;
     int value;
-    while (count < card_count)
+    // read and add cards one by one
+    while (count < (int)card_count)
     {
         f >> value;
         Card c(value);
@@ -90,12 +90,14 @@ int Deck::number_of_cards()
 //
 Card Deck::inspect_top_card()
 {
+    // check if the index is within the range
     if (m_deck.num_cards() <=0) {
         cerr << "ERROR: inspect_top_card called with deck list length: "
              << m_deck.num_cards()
              << endl;
         exit(1);
     }
+    // copy the first card and return
     Card c;
     c = m_deck.get_card_at(0);
     return c;
@@ -106,12 +108,14 @@ Card Deck::inspect_top_card()
 //
 Card Deck::draw_top_card()
 {
+    // check if the index is within the range
     if (m_deck.num_cards() <=0) {
         cerr << "ERROR: draw_top_card called with deck list length: "
              << m_deck.num_cards()
              << endl;
         exit(1);
     }
+    // copy the first card, delete it, and return the copy
     Card c;
     c = m_deck.get_card_at(0);
     m_deck.remove_card_at(0);
